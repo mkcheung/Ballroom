@@ -4,19 +4,28 @@
   	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone-no">
 	<meta name="viewport" content="user-scalable=no, initial-scale=1, minimum-scale=1, maximum-scale=1, width=device-width, height=device-height">
- 	<link rel="stylesheet" href="css/jquery.mobile-1.3.1.css">
-	<link rel="stylesheet" href="css/jquery.mobile.structure-1.3.1.css">
+ 	<!-- <link rel="stylesheet" href="css/jquery.mobile-1.3.1.css">
 	<link rel="stylesheet" href="css/jquery.mobile.theme-1.3.1.css">
+	<link rel="stylesheet" href="css/jquery.mobile.structure-1.3.1.css"> -->
+	<link rel="stylesheet" href="css/jquery.mobile-1.3.2.min.css">
+	<link rel="stylesheet" href="css/jquery.mobile.theme-1.3.2.min.css">
+	<link rel="stylesheet" href="css/jquery.mobile.structure-1.3.2.min.css">
   	<script type="text/javascript" charset="utf-8" src="js/jquery-1.10.1.min.js"></script>
   	<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
   	<script type="text/javascript" charset="utf-8" src="js/html5sql.js"></script>
- 	<script type="text/javascript" charset="utf-8" src="js/jquery.mobile-1.3.1.js"></script>
+ 	<!-- <script type="text/javascript" charset="utf-8" src="js/jquery.mobile-1.3.1.js"></script> -->
+ 	<script type="text/javascript" charset="utf-8" src="js/jquery.mobile-1.3.2.min.js"></script>
   	<script type="text/javascript" charset="utf-8" src="js/databaseSetup.js"></script>
  
  	<script>
+ 		preBronze = 1;
+ 		bronze = 1;
+ 		silver = 1;
+ 		gold = 1;
  		selector = 0;
  		danceId = 0;
  		danceLevelId = 0;
+ 		delete_routine_id_selector = 0;
  		function onBodyLoad(){
  			document.addEventListener("deviceready", onDeviceReady, false);
  		}
@@ -25,6 +34,7 @@
  			//dropDB();
  			//newRoutine(1,1);
  			//listRoutines();
+ 			initialize();
  		}
  	</script>
  </head>
@@ -62,97 +72,20 @@
   		<h1>Dance Selector</h1>
   	</div>
   	<div data-role="content">
-	  	<div id="dancesAndLevels" data-role="collapsible-set" data-theme="c" data-content-theme="d" data-mini="true">
-	 		<div data-role="collapsible">
-		    	<h1>Waltz</h1>
-		 		<ul data-role="listview" data-inset="true">
-					<li data-danceId="1" data-danceLevelId="1" data-pageLink="#Waltz-PreBronze">
-						Pre-Bronze / Student Teacher
-					</li>
-					<li data-danceId="1" data-danceLevelId="2" data-pageLink="#Waltz-Bronze">
-						Bronze / Associate
-					</li>
-					<li data-danceId="1" data-danceLevelId="3">
-						Silver / Licentiate
-					</li>
-					<li>
-						<a href="#Waltz-Gold">Gold / Fellow</a>
-					</li>
-		 		</ul>
-	 		</div>
-	 		<div data-role="collapsible">
-		    	<h1>Tango</h1>
-		 		<ul data-role="listview" data-inset="true">
-					<li>
-						<a href="#">Pre-Bronze / Student Teacher</a>
-					</li>
-					<li>
-						<a href="#">Bronze / Associate</a>
-					</li>
-					<li>
-						<a href="#">Silver / Licentiate</a>
-					</li>
-					<li>
-						<a href="#">Gold / Fellow</a>
-					</li>
-		 		</ul>
-	 		</div>
-	 		<div data-role="collapsible">
-		    	<h1>Viennese Waltz</h1>
-		 		<ul data-role="listview" data-inset="true">
-					<li data-danceId="3" data-pageLink="#VienneseWaltz-Bronze">
-						Bronze / Associate
-					</li>
-					<li>
-						<a href="#">Silver / Licentiate</a>
-					</li>
-					<li>
-						<a href="#">Gold / Fellow</a>
-					</li>
-		 		</ul>
-	 		</div>
-	 		<div data-role="collapsible">
-		    	<h1>Foxtrot</h1>
-		 		<ul data-role="listview" data-inset="true">
-					<li>
-						<a href="#">Pre-Bronze / Student Teacher</a>
-					</li>
-					<li>
-						<a href="#">Bronze / Associate</a>
-					</li>
-					<li>
-						<a href="#">Silver / Licentiate</a>
-					</li>
-					<li>
-						<a href="#">Gold / Fellow</a>
-					</li>
-		 		</ul>
-	 		</div>
-	 		<div data-role="collapsible">
-		    	<h1>Quickstep</h1>
-		 		<ul data-role="listview" data-inset="true">
-					<li>
-						<a href="#">Pre-Bronze / Student Teacher</a>
-					</li>
-					<li>
-						<a href="#">Bronze / Associate</a>
-					</li>
-					<li>
-						<a href="#">Silver / Licentiate</a>
-					</li>
-					<li>
-						<a href="#">Gold / Fellow</a>
-					</li>
-		 		</ul>
-	 		</div>
-	 	</div>
+  	
+		<ul id="dancesAndLevels" data-role="listview" data-inset="true">
+			<li data-danceId="1" data-pageLink="#Waltz-PreBronze">
+				Waltz
+			</li>
+			<li data-danceId="3" data-pageLink="#VienneseWaltz-Bronze">
+				Viennese Waltz
+			</li>
+		</ul>
 		<script>
 	 		$('#dancesAndLevels li').on("vclick",function(){
 		        danceId = $(this).attr("data-danceId");
-		        danceLevelId = $(this).attr("data-danceLevelId");
 		        localStorage.pageLink = $(this).attr("data-pageLink");
 		        //alert(danceId);
-		        //alert(danceLevelId);
 		        //alert(localStorage.pageLink);
 		        $.mobile.changePage('#routineNaming-Dialog', {transition: 'slidedown', role: 'dialog'});
 		    });
@@ -169,9 +102,15 @@
   		<h1>Routines</h1>
   	</div>
   	<div data-role="content">
-  		<ul id="listOfAllRoutines" data-role="listview" data-inset="true">
+  		<ul id="listOfAllRoutines" data-role="listview" data-split-icon="gear" data-split-theme="d" data-inset="true">
 
   		</ul>
+		<div data-role="popup" id="routineDelete_popup" data-theme="d" data-overlay-theme="b" class="ui-content" style="max-width:340px; padding-bottom:2em;">
+		    <h3>Delete Routine</h3>
+		    <p>Are you sure?</p>
+		    <a id="routineDelete_popup_confirm" href="#" data-role="button" data-rel="back" data-theme="b" data-icon="check" data-inline="true" data-mini="true">Delete</a>
+		    <a id="routineDelete_popup_deny" href="#" data-role="button" data-rel="back" data-inline="true" data-mini="true">Cancel</a>
+		</div>
   	</div>
   	<div data-role="footer" data-position="fixed">
   		<h1>Routines</h1>
@@ -181,10 +120,39 @@
 	$('#seeRoutines').on('pagebeforeshow', listRoutines('#listOfAllRoutines'));
 	$('#ballroomAppBody').on('vclick', '#listOfAllRoutines li', function(){
 		selector = parseInt($(this).attr('id'));
-		alert(selector);
-		alert(typeof selector);
+		//alert(selector);
+		//alert(typeof selector);
 		showStepsInRoutine(selector, '#listOfAllStepsInRoutine')
 		$.mobile.changePage('#seeStepsInRoutine');
+	});
+	$('#ballroomAppBody').on('vclick', '.routineListing_deleteButton', function(e){
+  		e.stopPropagation();
+  		e.preventDefault();
+		delete_routine_id_selector = parseInt($(this).attr('data-delete_routine_id'));
+		console.log('CHECKING ' + delete_routine_id_selector);
+		$("#routineDelete_popup").popup('open');
+	});
+	$('#ballroomAppBody').on('vclick', '#routineDelete_popup > a', function(e){
+  		e.stopPropagation();
+  		e.preventDefault();
+		commandId = $(this).attr('id');
+		theCommand = commandId.substr(commandId.lastIndexOf("_") + 1, commandId.length);
+		console.log(typeof(theCommand) +' COMMAND: ' + theCommand);
+		switch(theCommand) {
+			case 'confirm':
+				console.log(delete_routine_id_selector);
+				deleteRoutine(delete_routine_id_selector);
+				$('#routineDelete_popup').popup('close');
+				break;
+			case 'deny':
+				delete delete_routine_id_selector;
+				console.log('UNSET ID' + delete_routine_id_selector);
+				$('#routineDelete_popup').popup('close');
+				break;
+			default:
+				break;
+		}
+		//$.mobile.changePage('#seeStepsInRoutine');
 	});
   </script>	 
   
@@ -202,7 +170,7 @@
   	</div>
   </div>
   <script>
-	$('#seeStepsInRoutine').on('pagebeforeshow', $('#listOfAllStepsInRoutine').listview('refresh'));
+	//$('#seeStepsInRoutine').on('pagebeforeshow', $('#listOfAllStepsInRoutine').listview('refresh'));
   </script>
   
   
@@ -213,13 +181,12 @@
   	<div data-role="content">
   		<label for="routineName">Please enter a name for the routine:</label>
   		<input type="text" id="routineName"></input>
-  		<input id="nameARoutine" type="button" data-role="button" data-theme="e" value="Routine Name"></input>
+  		<input id="nameARoutine" type="button" data-role="button" data-theme="e" value="Add Steps"></input>
  		<script>
   			$('#nameARoutine').on("tap", function(){
   				newRoutineName = $('#routineName').val();
   		  		//$('#routineNaming-Dialog').dialog('close');
   		  		nameRoutine(newRoutineName);
-  			    //alert('prior to redirect: ' + localStorage.pageLink);
   			    routineStepList = '#' + localStorage.pageLink.substring(1, localStorage.pageLink.length) + '-NewRoutine-list';
   			    initialStepPanelList = '#' + localStorage.pageLink.substring(1, localStorage.pageLink.length) + '-panel-list';
   			    //alert(routineStepList);
@@ -232,7 +199,8 @@
   			    	$(initialStepPanelList).empty();
   	  			    $(initialStepPanelList).listview('refresh');	
   			    }
-  			  	newRoutine(danceId, danceLevelId, initialStepPanelList);
+  			  	newRoutine(danceId, initialStepPanelList);
+  			  	$('#routineName').val('');
   		  	  	$.mobile.changePage(localStorage.pageLink);
   		  	});
 	  	</script>
@@ -261,11 +229,11 @@
   	</div>
   </div>
   <script>
-  	$('#ballroomAppBody').on('vclick', '#Waltz-PreBronze-panel-list li', function(){
+   	$('#ballroomAppBody').on('vclick', '#Waltz-PreBronze-panel-list li', function(){
   		addToRoutine(localStorage.newRoutineIndex, $(this).attr('data-stepid'));
   		showStepsInRoutine(localStorage.newRoutineIndex, '#Waltz-PreBronze-NewRoutine-list');
   		//alert($(this).attr('data-stepid'));
-  	});
+  	}); 
   </script>
   
   
@@ -286,15 +254,10 @@
   	</div>
   </div>
 	<script>
-		//$('#Waltz-Bronze').on('pagebeforeshow', newRoutine(danceId, danceLevelId, '#Waltz-Bronze-panel-list'));
+		//$('#Waltz-Bronze').on('pagebeforeshow', newRoutine(danceId, '#Waltz-Bronze-panel-list'));
 	</script>
   
   <div id="VienneseWaltz-Bronze" data-role="page">
-  	<div data-role="panel" id="VienneseWaltz-Bronze-panel">
-		<ul data-role="listview" data-inset="true" id="VienneseWaltz-Bronze-panel-list">
-	 	</ul>
-		<a href="#" data-role="button" data-inline="true" data-theme="b">Delete Step</a>
-	</div>
  	<div data-role="header" data-position="fixed">
   		<h1>VienneseWaltz-Bronze</h1>
   		<a href="#main" data-icon="gear" class="ui-btn-right">Home</a>
@@ -304,12 +267,92 @@
   		<ul data-role="listview" data-inset="true" id="VienneseWaltz-Bronze-NewRoutine-list">
   		</ul>
 	</div>
-  	<div data-role="footer" data-position="fixed">
-  		<h1>VienneseWaltz-Bronze</h1>
+  	<div data-role="footer" class="ui-bar" data-position="fixed">
   	</div>
+  	<div data-role="panel" id="VienneseWaltz-Bronze-panel">
+		<ul data-role="listview" data-inset="true" id="VienneseWaltz-Bronze-panel-list">
+	 	</ul>
+		<a id="VienneseWaltz-Bronze-delete-button" href="#" data-role="button" data-mini="true" data-inline="true" data-theme="b">Delete Step</a>
+		<script>
+			var lastListItem;
+			$('#VienneseWaltz-Bronze-delete-button').on('vclick', function(e){
+		  		e.stopPropagation();
+		  		e.preventDefault();
+				steps = $('#VienneseWaltz-Bronze-NewRoutine-list li').length;
+				
+				if(steps == 0){
+					//do nothing
+				} else if (steps == 1) {
+					lastListItem = $('#VienneseWaltz-Bronze-NewRoutine-list li').last();
+					deleteRoutineStep(lastListItem.attr('data-routine_id'), lastListItem.attr('data-stepInRoutineId'), '#VienneseWaltz-Bronze-panel-list', null, lastListItem.attr('data-dance_id'));
+					showStepsInRoutine(lastListItem.attr('data-routine_id'), '#VienneseWaltz-Bronze-NewRoutine-list');
+					//alert('before');
+					//newRoutine(lastListItem.attr('data-danceId'), '#VienneseWaltz-Bronze-panel-list');
+				} else {
+					lastListItem = $('#VienneseWaltz-Bronze-NewRoutine-list li').last();
+					priorToLastItem = lastListItem.prev();
+					deleteRoutineStep(lastListItem.attr('data-routine_id'), lastListItem.attr('data-stepInRoutineId'), '#VienneseWaltz-Bronze-panel-list', priorToLastItem.attr('data-step_id'), null);
+			  		showStepsInRoutine(lastListItem.attr('data-routine_id'), '#VienneseWaltz-Bronze-NewRoutine-list');
+				}
+			});
+		</script>
+		<br>
+		<div data-role="controlgroup" data-type="horizontal">
+    		<a id="VienneseWaltz-button-bronze" href="#" data-role="button" data-inline="true" data-icon="plus" data-mini="true" >Bronze</a>
+   	 		<script>
+   	 			$('#VienneseWaltz-button-bronze').on('vclick', function(e){
+  					e.stopPropagation();
+  					e.preventDefault();
+   	 				if(bronze == 1){
+   	 					bronze = 0;
+   	 					//alert($('#VienneseWaltz-Bronze-panel-list li[data-danceLevelId="1"]').length);
+   	 					$('#VienneseWaltz-Bronze-panel-list li[data-danceLevelId="1"]').hide();
+   	 				} else {
+   	 					bronze = 1;
+   	 					//alert($('#VienneseWaltz-Bronze-panel-list li[data-danceLevelId="1"]').length);
+   	 					$('#VienneseWaltz-Bronze-panel-list li[data-danceLevelId="1"]').show();
+   	 				}
+   	 			});
+   	 		</script>
+   	 		<a id="VienneseWaltz-button-silver" href="#" data-role="button" data-inline="true" data-icon="arrow-u" data-mini="true" >Silver</a>
+   	 		<script>
+   	 			$('#VienneseWaltz-button-silver').on('vclick', function(e){
+  					e.stopPropagation();
+  					e.preventDefault();
+   	 				if(silver == 1){
+   	 					silver = 0;
+   	 					//alert($('#VienneseWaltz-Bronze-panel-list li[data-danceLevelId="2"]').length);
+   	 					$('#VienneseWaltz-Bronze-panel-list li[data-danceLevelId="2"]').hide();
+   	 				} else {
+   	 					silver = 1;
+   	 					//alert($('#VienneseWaltz-Bronze-panel-list li[data-danceLevelId="2"]').length);
+   	 					$('#VienneseWaltz-Bronze-panel-list li[data-danceLevelId="2"]').show();
+   	 				}
+   	 			});
+   	 		</script>
+    		<a id="VienneseWaltz-button-gold" href="#" data-role="button" data-inline="true" data-icon="arrow-d" data-mini="true" >Gold</a>
+   	 		<script>
+   	 			$('#VienneseWaltz-button-gold').on('vclick', function(e){
+  					e.stopPropagation();
+  					e.preventDefault();
+   	 				if(gold == 1){
+   	 					gold = 0;
+   	 					//alert($('#VienneseWaltz-Bronze-panel-list li[data-danceLevelId="3"]').length);
+   	 					$('#VienneseWaltz-Bronze-panel-list li[data-danceLevelId="3"]').hide();
+   	 				} else {
+   	 					gold = 1;
+   	 					//alert($('#VienneseWaltz-Bronze-panel-list li[data-danceLevelId="3"]').length);
+   	 					$('#VienneseWaltz-Bronze-panel-list li[data-danceLevelId="3"]').show();
+   	 				}
+   	 			});
+   	 		</script>		
+		</div>
+	</div>
   </div>
   <script>
-  	$('#ballroomAppBody').on('vclick', '#VienneseWaltz-Bronze-panel-list li', function(){
+  	$('#ballroomAppBody').on('vclick', '#VienneseWaltz-Bronze-panel-list li', function(e){
+  		e.stopPropagation();
+  		e.preventDefault();
   		addToRoutine(localStorage.newRoutineIndex, $(this).attr('data-stepid'),'#VienneseWaltz-Bronze-panel-list');
   		showStepsInRoutine(localStorage.newRoutineIndex, '#VienneseWaltz-Bronze-NewRoutine-list');
   	});

@@ -108,10 +108,10 @@
 	"buffers":
 	[
 		{
-			"file": "main.html",
+			"file": "js/databaseSetup.js",
 			"settings":
 			{
-				"buffer_size": 10354,
+				"buffer_size": 9125,
 				"line_ending": "Unix"
 			}
 		}
@@ -119,11 +119,15 @@
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 107.0,
+		"height": 247.0,
 		"selected_items":
 		[
 			[
 				"git",
+				"Git: Init"
+			],
+			[
+				"",
 				"Git: Init"
 			],
 			[
@@ -159,7 +163,7 @@
 				"Git: Init"
 			]
 		],
-		"width": 575.0
+		"width": 449.0
 	},
 	"console":
 	{
@@ -177,6 +181,7 @@
 	"file_history":
 	[
 		"/Applications/XAMPP/xamppfiles/htdocs/Ballroom/js/databaseSetup.js",
+		"/Users/marscheung/Downloads/jquery-ui-1.10.0.custom/index.html",
 		"/Applications/XAMPP/xamppfiles/htdocs/Ballroom/main.html",
 		"/Applications/XAMPP/xamppfiles/htdocs/cake/app/Controller/AppController.php",
 		"/Applications/XAMPP/xamppfiles/htdocs/cake/app/Controller/UsersController.php",
@@ -302,8 +307,7 @@
 		"/Applications/XAMPP/xamppfiles/htdocs/ToastmasterLibrary/includes/Manual.php",
 		"/Applications/XAMPP/xamppfiles/htdocs/ToastmasterLibrary/includes/roleDelete.php",
 		"/Users/marscheung/Downloads/Ex_Files_Pract_JavScrpt/exercise_files/03_events/simpleevent.html",
-		"/Users/marscheung/Downloads/Ex_Files_Pract_JavScrpt/exercise_files/03_events/simpleevent_start.html",
-		"/Users/marscheung/Downloads/Ex_Files_Pract_JavScrpt/exercise_files/03_events/modernevents.html"
+		"/Users/marscheung/Downloads/Ex_Files_Pract_JavScrpt/exercise_files/03_events/simpleevent_start.html"
 	],
 	"find":
 	{
@@ -477,26 +481,27 @@
 			[
 				{
 					"buffer": 0,
-					"file": "main.html",
+					"file": "js/databaseSetup.js",
 					"settings":
 					{
-						"buffer_size": 10354,
+						"buffer_size": 9125,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1657,
-								1657
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.tmLanguage"
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 2433.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"

@@ -19,6 +19,7 @@ function checkDB(){
 		handleError);	
 }
 
+
 function populateTheDatabase(){
 	html5sql.process(
 		[
@@ -53,23 +54,64 @@ function populateTheDatabase(){
 		 	"INSERT INTO steps (danceId, danceLevelId, name) VALUES (3, 1, 'Natural Turn');", // 20
 		 	"INSERT INTO steps (danceId, danceLevelId, name) VALUES (3, 1, '1-3 Natural Turn');", //21
 		 	"INSERT INTO steps (danceId, danceLevelId, name) VALUES (3, 1, '4-6 Natural Turn');", // 22
-		 	"INSERT INTO steps (danceId, danceLevelId, name) VALUES (3, 1, 'RF Forward Change Step');", // 23
-		 	"INSERT INTO steps (danceId, danceLevelId, name) VALUES (3, 1, 'LF Forward Change Step');",
-		 	"INSERT INTO steps (danceId, danceLevelId, name) VALUES (3, 1, 'RF Backward Change Step');",
-		 	"INSERT INTO steps (danceId, danceLevelId, name) VALUES (3, 1, 'LF Backward Change Step');",
-		 	"INSERT INTO followUpSteps (stepId, followUpStepId) VALUES (17, 24);",
+		 	"INSERT INTO steps (danceId, danceLevelId, name) VALUES (3, 1, 'LF Forward Change Step');", // 23
+		 	"INSERT INTO steps (danceId, danceLevelId, name) VALUES (3, 1, 'RF Forward Change Step');", //24
+		 	"INSERT INTO steps (danceId, danceLevelId, name) VALUES (3, 1, 'LF Backward Change Step');", //25
+		 	"INSERT INTO steps (danceId, danceLevelId, name) VALUES (3, 1, 'RF Backward Change Step');", //26
+		 	"INSERT INTO steps (danceId, danceLevelId, name) VALUES (3, 2, 'Reverse Fleckerl');", //27
+		 	"INSERT INTO steps (danceId, danceLevelId, name) VALUES (3, 2, '1-3 Reverse Fleckerl');", //28
+		 	"INSERT INTO steps (danceId, danceLevelId, name) VALUES (3, 3, 'Natural Fleckerl');", //29
+		 	"INSERT INTO steps (danceId, danceLevelId, name) VALUES (3, 3, '1-3 Natural Fleckerl');", //30
+		 	"INSERT INTO steps (danceId, danceLevelId, name) VALUES (3, 3, 'Contra Check');", //31
+		 	"INSERT INTO followUpSteps (stepId, followUpStepId) VALUES (17, 23);",
 		 	"INSERT INTO followUpSteps (stepId, followUpStepId) VALUES (17, 17);",
 		 	"INSERT INTO followUpSteps (stepId, followUpStepId) VALUES (17, 18);",
+		 	"INSERT INTO followUpSteps (stepId, followUpStepId) VALUES (17, 27);",
+		 	"INSERT INTO followUpSteps (stepId, followUpStepId) VALUES (17, 28);",
+		 	"INSERT INTO followUpSteps (stepId, followUpStepId) VALUES (17, 31);",
 		 	"INSERT INTO followUpSteps (stepId, followUpStepId) VALUES (18, 25);",
 		 	"INSERT INTO followUpSteps (stepId, followUpStepId) VALUES (19, 23);",
-		 	"INSERT INTO followUpSteps (stepId, followUpStepId) VALUES (19, 20);",
-		 	"INSERT INTO followUpSteps (stepId, followUpStepId) VALUES (19, 21);",
+		 	"INSERT INTO followUpSteps (stepId, followUpStepId) VALUES (19, 17);",
+		 	"INSERT INTO followUpSteps (stepId, followUpStepId) VALUES (19, 18);",
+		 	"INSERT INTO followUpSteps (stepId, followUpStepId) VALUES (19, 27);",
+		 	"INSERT INTO followUpSteps (stepId, followUpStepId) VALUES (19, 28);",
+		 	"INSERT INTO followUpSteps (stepId, followUpStepId) VALUES (19, 31);",
+		 	"INSERT INTO followUpSteps (stepId, followUpStepId) VALUES (20, 24);",
+		 	"INSERT INTO followUpSteps (stepId, followUpStepId) VALUES (20, 20);",
+		 	"INSERT INTO followUpSteps (stepId, followUpStepId) VALUES (20, 21);",
+		 	"INSERT INTO followUpSteps (stepId, followUpStepId) VALUES (20, 29);",
+		 	"INSERT INTO followUpSteps (stepId, followUpStepId) VALUES (20, 31);",
+		 	"INSERT INTO followUpSteps (stepId, followUpStepId) VALUES (21, 25);",
+		 	"INSERT INTO followUpSteps (stepId, followUpStepId) VALUES (22, 24);",
+		 	"INSERT INTO followUpSteps (stepId, followUpStepId) VALUES (22, 20);",
+		 	"INSERT INTO followUpSteps (stepId, followUpStepId) VALUES (22, 21);",
+		 	"INSERT INTO followUpSteps (stepId, followUpStepId) VALUES (22, 29);",
+		 	"INSERT INTO followUpSteps (stepId, followUpStepId) VALUES (22, 31);",
+		 	"INSERT INTO followUpSteps (stepId, followUpStepId) VALUES (23, 20);",
+		 	"INSERT INTO followUpSteps (stepId, followUpStepId) VALUES (23, 21);",
+		 	"INSERT INTO followUpSteps (stepId, followUpStepId) VALUES (24, 17);",
+		 	"INSERT INTO followUpSteps (stepId, followUpStepId) VALUES (24, 18);",
+		 	"INSERT INTO followUpSteps (stepId, followUpStepId) VALUES (25, 19);",
+		 	"INSERT INTO followUpSteps (stepId, followUpStepId) VALUES (26, 22);",
+		 	"INSERT INTO followUpSteps (stepId, followUpStepId) VALUES (27, 31);",
+		 	"INSERT INTO followUpSteps (stepId, followUpStepId) VALUES (27, 17);",
+		 	"INSERT INTO followUpSteps (stepId, followUpStepId) VALUES (27, 18);",
+		 	"INSERT INTO followUpSteps (stepId, followUpStepId) VALUES (27, 27);",
+		 	"INSERT INTO followUpSteps (stepId, followUpStepId) VALUES (27, 28);",
+		 	"INSERT INTO followUpSteps (stepId, followUpStepId) VALUES (28, 19);",
+		 	"INSERT INTO followUpSteps (stepId, followUpStepId) VALUES (29, 29);",
+		 	"INSERT INTO followUpSteps (stepId, followUpStepId) VALUES (29, 20);",
+		 	"INSERT INTO followUpSteps (stepId, followUpStepId) VALUES (29, 21);",
+		 	"INSERT INTO followUpSteps (stepId, followUpStepId) VALUES (30, 22);",
+		 	"INSERT INTO followUpSteps (stepId, followUpStepId) VALUES (31, 29);",
+		 	"INSERT INTO followUpSteps (stepId, followUpStepId) VALUES (31, 20);",
+		 	"INSERT INTO followUpSteps (stepId, followUpStepId) VALUES (31, 21);",
 		 	"SELECT * FROM steps;"
 			],
 			function (transaction, results, rowsArray){
 				//alert(rowsArray.length);
 				for(i=0; i < rowsArray.length; i++){
-					alert(rowsArray[i].name);
+					//alert(rowsArray[i].name);
 				}
 			},
 			handleError);
@@ -93,6 +135,8 @@ function dropDB()
 	);
 }
 
+
+
 function nameRoutine(nameOfNewRoutine){
 	html5sql.process(
 		[
@@ -113,13 +157,13 @@ function nameRoutine(nameOfNewRoutine){
 	);
 }
 
-function newRoutine(danceId, danceLevelId, stepListId){
+function newRoutine(danceId, stepListId){
 	//var danceId = localStorage.danceId;
 	//var danceLevelId = localStorage.danceLevelId;
 	
 	html5sql.process(
 		[
-		 	"SELECT * FROM steps WHERE danceId = '" + danceId + "' AND danceLevelId = '" + danceLevelId + "';"
+		 	"SELECT * FROM steps WHERE danceId = '" + danceId + "';"
 		],
 		function(transaction, results, rowsArray){
 			//alert("SELECT * FROM steps WHERE danceId = '" + danceId + "' AND danceLevelId = '" + danceLevelId + "'");
@@ -130,8 +174,23 @@ function newRoutine(danceId, danceLevelId, stepListId){
 				for (var i=0; i < rowsArray.length; i++){
 					var id = rowsArray[i].id;
 					var name = rowsArray[i].name;
-					html += '<li data-stepid="' + id + '">' + name + '</li>';
+					var danceLevelId = rowsArray[i].danceLevelId;
+					if((bronze == 1) && (danceLevelId == 1)){
+						html += '<li data-stepid="' + id + '" data-danceLevelId="' + danceLevelId + '">' + name + '</li>';
+					} else if ((bronze == 0) && (danceLevelId == 1)){
+						html += '<li data-stepid="' + id + '" data-danceLevelId="' + danceLevelId + '" style="display:none">' + name + '</li>';
+					} else if ((silver == 1) && (danceLevelId == 2)){
+						html += '<li data-stepid="' + id + '" data-danceLevelId="' + danceLevelId + '">' + name + '</li>';
+					} else if ((silver == 0) && (danceLevelId == 2)){
+						html += '<li data-stepid="' + id + '" data-danceLevelId="' + danceLevelId + '" style="display:none">' + name + '</li>';
+					} else if ((gold == 1) && (danceLevelId == 3)){
+						html += '<li data-stepid="' + id + '" data-danceLevelId="' + danceLevelId + '">' + name + '</li>';
+					} else if ((gold == 0) && (danceLevelId == 3)){
+						html += '<li data-stepid="' + id + '" data-danceLevelId="' + danceLevelId + '" style="display:none">' + name + '</li>';
+					}
 				}
+				//alert(bronze);
+				$(stepListId).empty();
 				$(stepListId).append($(html));
 				$(stepListId).listview('refresh');
 			}
@@ -141,6 +200,7 @@ function newRoutine(danceId, danceLevelId, stepListId){
 }
 
 function addToRoutine(routineId, stepId, stepOptionsList){
+	console.log('h1');
 	var lastStepIdAdded; 
 	var followUpIdCsv = '';
 	var sample = '' ;
@@ -150,10 +210,6 @@ function addToRoutine(routineId, stepId, stepOptionsList){
 			"SELECT * FROM followUpSteps WHERE stepId = '" + stepId + "';"
 		],
 		function(transaction, results, rowsArray){
-			//alert("SELECT * FROM followUpSteps WHERE stepId = '" + stepId + "'");
-			//alert(rowsArray.toString());
-			//localStorage.removeItem('followUpCsv');
-			//alert(localStorage.followUpCsv);
 			if(rowsArray.length >= 1){
 				for(var i=0; i<rowsArray.length; i++){
 					//alert(rowsArray[i].followUpStepId);
@@ -163,12 +219,53 @@ function addToRoutine(routineId, stepId, stepOptionsList){
 						followUpIdCsv += "'" + rowsArray[i].followUpStepId + "'";	
 					}
 				}
-				//localStorage.followUpCsv = followUpIdCsv;
 				displayFollowUpSteps(followUpIdCsv, stepOptionsList)
 			}
 		},
 		handleError
 	);
+}
+
+function deleteRoutineStep(routineId, stepInRoutineId, stepOptionsList, stepId, danceId){
+	var followUpIdCsv = '';
+
+	if(stepId){
+		console.log(routineId);
+		console.log(stepInRoutineId);
+		console.log(stepOptionsList);
+		console.log(stepId);
+		console.log(danceId);
+		
+		html5sql.process(
+			[
+			 	"DELETE FROM stepsInRoutine WHERE routine_id = '" + routineId  + "' AND id =  '" + stepInRoutineId + "';",
+				"SELECT * FROM followUpSteps WHERE stepId = '" + stepId + "';"
+			],
+			function(transaction, results, rowsArray){
+				if(rowsArray.length >= 1){
+					for(var i=0; i<rowsArray.length; i++){
+						if(i != (rowsArray.length - 1)){
+							followUpIdCsv += "'" + rowsArray[i].followUpStepId + "',";		
+						} else {
+							followUpIdCsv += "'" + rowsArray[i].followUpStepId + "'";	
+						}
+					}
+					displayFollowUpSteps(followUpIdCsv, stepOptionsList);
+				}
+			},
+			handleError
+		);
+	} else {
+		html5sql.process(
+			[
+			 	"DELETE FROM stepsInRoutine WHERE routine_id = '" + routineId  + "' AND id =  '" + stepInRoutineId + "';"
+			],
+			function(transaction, results, rowsArray){
+				newRoutine(danceId, stepOptionsList);
+			},
+			handleError
+		);	
+	}
 }
 
 function displayFollowUpSteps(followUpIdCsv, stepListId){
@@ -177,15 +274,29 @@ function displayFollowUpSteps(followUpIdCsv, stepListId){
 		 	"SELECT * FROM steps WHERE id IN (" + followUpIdCsv + ");"
 		],
 		function(transaction, results, rowsArray){
-			//alert("SELECT * FROM steps WHERE id IN (" + followUpIdCsv + ")");
+			console.log(followUpIdCsv);
+			console.log(stepListId);
+			console.log("SELECT * FROM steps WHERE id IN (" + followUpIdCsv + ")");
 			if(rowsArray.length >= 1){
 				var html = '';
 				for (var i=0; i < rowsArray.length; i++){
 					var id = rowsArray[i].id;
 					var name = rowsArray[i].name;
-					html += '<li data-stepid="' + id + '">' + name + '</li>';
+					var danceLevelId = rowsArray[i].danceLevelId;
+					if((bronze == 1) && (danceLevelId == 1)){
+						html += '<li data-stepid="' + id + '" data-danceLevelId="' + danceLevelId + '">' + name + '</li>';
+					} else if ((bronze == 0) && (danceLevelId == 1)){
+						html += '<li data-stepid="' + id + '" data-danceLevelId="' + danceLevelId + '" style="display:none">' + name + '</li>';
+					} else if ((silver == 1) && (danceLevelId == 2)){
+						html += '<li data-stepid="' + id + '" data-danceLevelId="' + danceLevelId + '">' + name + '</li>';
+					} else if ((silver == 0) && (danceLevelId == 2)){
+						html += '<li data-stepid="' + id + '" data-danceLevelId="' + danceLevelId + '" style="display:none">' + name + '</li>';
+					} else if ((gold == 1) && (danceLevelId == 3)){
+						html += '<li data-stepid="' + id + '" data-danceLevelId="' + danceLevelId + '">' + name + '</li>';
+					} else if ((gold == 0) && (danceLevelId == 3)){
+						html += '<li data-stepid="' + id + '" data-danceLevelId="' + danceLevelId + '" style="display:none">' + name + '</li>';
+					}
 				}
-				//alert(html);
 				$(stepListId).empty();
 				$(stepListId).append($(html));
 				$(stepListId).listview('refresh');
@@ -199,18 +310,20 @@ function displayFollowUpSteps(followUpIdCsv, stepListId){
 function showStepsInRoutine(routineId, listToDisplaySteps){
 	html5sql.process(
 		[
-		 	"SELECT s.name, sir.routine_id FROM stepsInRoutine sir JOIN steps s ON sir.step_id = s.id WHERE sir.routine_id = '" + routineId + "';"
+		 	"SELECT s.name, sir.step_id, sir.routine_id, sir.id, s.danceId FROM stepsInRoutine sir JOIN steps s ON sir.step_id = s.id WHERE sir.routine_id = '" + routineId + "';"
 		],
 		function(transaction, results, rowsArray){
 			var html = ''; 
 			if(rowsArray.length >= 1){
 				for (var i=0; i < rowsArray.length; i++){
 					//alert(rowsArray[i].routine_id + ' ' + rowsArray[i].name);
-					html += '<li>' + rowsArray[i].name + '</li>';
+					html += '<li data-step_id="' + rowsArray[i].step_id + '" data-dance_id="' + rowsArray[i].danceId + '" data-routine_id="' + rowsArray[i].routine_id + '" data-stepInRoutineId="' + rowsArray[i].id + '">' + rowsArray[i].name + '</li>';
 				}
 				$(listToDisplaySteps).empty();
 				$(listToDisplaySteps).append(html);
 				$(listToDisplaySteps).listview('refresh');
+			} else {
+				$(listToDisplaySteps).empty();
 			}
 		},
 		handleError
@@ -218,7 +331,7 @@ function showStepsInRoutine(routineId, listToDisplaySteps){
 }
 
 function listRoutines(routineList){
-	alert(routineList);
+	//alert(routineList);
 	html5sql.process(
 		[
 		 	"SELECT * FROM routines;"
@@ -227,8 +340,12 @@ function listRoutines(routineList){
 			var html = '';
 			if(rowsArray.length >= 1){
 				for (var i=0; i < rowsArray.length; i++){
-					html += '<li id="' + rowsArray[i].id + '">' + rowsArray[i].name + '</li>';
+					html += '<li id="' + rowsArray[i].id + '"><a href="#"></a>' 
+					+ rowsArray[i].name 
+					+ ' <a href="#routineDelete_popup" class="routineListing_deleteButton" data-delete_routine_id="' + rowsArray[i].id + '" data-rel="popup" data-position-to="window" data-transition="pop"></a>'
+					+ '</li>';
 				}
+				console.log(html);
 				$(routineList).empty();
 				$(routineList).append($(html));
 				$(routineList).listview('refresh');
@@ -236,6 +353,51 @@ function listRoutines(routineList){
 		},
 		handleError
 	);
+}
+
+function deleteRoutine(routineId){
+	//alert(routineList);
+	html5sql.process(
+		[
+		 	"DELETE FROM routines WHERE id = '" + routineId  + "';",
+			"SELECT * FROM routines;"
+		],
+		function(transaction, results, rowsArray){
+			var html = '';
+			if(rowsArray.length >= 1){
+				for (var i=0; i < rowsArray.length; i++){
+					html += '<li id="' + rowsArray[i].id + '"><a href="#"></a>' 
+					+ rowsArray[i].name 
+					+ ' <a href="#routineDelete_popup" class="routineListing_deleteButton" data-delete_routine_id="' + rowsArray[i].id + '" data-rel="popup" data-position-to="window" data-transition="pop"></a>'
+					+ '</li>';
+				}
+				$('#listOfAllRoutines').empty();
+				$('#listOfAllRoutines').append($(html));
+				$('#listOfAllRoutines').listview('refresh');
+			}
+		},
+		handleError
+	);
+}
+
+
+function initialize(){
+	html5sql.process(
+		[
+		 	"CREATE TABLE if not exists dance (id INTEGER PRIMARY KEY, name TEXT);",
+		 	"CREATE TABLE if not exists danceLevel (id INTEGER PRIMARY KEY, name TEXT);",
+		 	"CREATE TABLE if not exists routines (id INTEGER PRIMARY KEY, name TEXT);",
+		 	"CREATE TABLE if not exists stepsInRoutine (id INTEGER PRIMARY KEY, routine_id INTEGER, step_id INTEGER, name TEXT);",
+		 	"CREATE TABLE if not exists steps (id INTEGER PRIMARY KEY, danceId INTEGER, danceLevelId INTEGER, name TEXT);",
+		 	"CREATE TABLE if not exists followUpSteps (id INTEGER PRIMARY KEY, stepId INTEGER, followUpStepId INTEGER);",
+		 	"SELECT * FROM steps;"
+		],
+		function (transaction, results, rowsArray){
+				if(rowsArray.length == 0){
+					populateTheDatabase();
+				}
+		},
+		handleError);	
 }
 
 function handleError(){
