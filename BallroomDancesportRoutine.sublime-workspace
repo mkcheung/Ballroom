@@ -107,21 +107,17 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "js/databaseSetup.js",
-			"settings":
-			{
-				"buffer_size": 9125,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 247.0,
+		"height": 392.0,
 		"selected_items":
 		[
+			[
+				"ga",
+				"Git: Add..."
+			],
 			[
 				"git",
 				"Git: Init"
@@ -163,7 +159,7 @@
 				"Git: Init"
 			]
 		],
-		"width": 449.0
+		"width": 575.0
 	},
 	"console":
 	{
@@ -181,8 +177,8 @@
 	"file_history":
 	[
 		"/Applications/XAMPP/xamppfiles/htdocs/Ballroom/js/databaseSetup.js",
-		"/Users/marscheung/Downloads/jquery-ui-1.10.0.custom/index.html",
 		"/Applications/XAMPP/xamppfiles/htdocs/Ballroom/main.html",
+		"/Users/marscheung/Downloads/jquery-ui-1.10.0.custom/index.html",
 		"/Applications/XAMPP/xamppfiles/htdocs/cake/app/Controller/AppController.php",
 		"/Applications/XAMPP/xamppfiles/htdocs/cake/app/Controller/UsersController.php",
 		"/Applications/XAMPP/xamppfiles/htdocs/cake/app/View/Users/index.ctp",
@@ -476,36 +472,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "js/databaseSetup.js",
-					"settings":
-					{
-						"buffer_size": 9125,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 2433.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				}
 			]
 		}
 	],
